@@ -1,0 +1,35 @@
+.dialog-Container {
+    width: 500px;
+    padding: 20px;
+    background-color: rgba(50, 50, 50, 0.5);
+
+    h1 {
+        color: white;
+    }
+
+    .mr-8px {
+        margin: 8px;
+    }
+    
+    .full-width {
+        width: 100%;
+    }
+
+    button {
+        color: white;
+    }
+
+    .dialog-input {
+        width: 100%;
+        margin: 8px;
+    }
+
+    .input-Contain {
+        display: flex;
+    }
+
+    .input-contain-adress {
+        display: flex;
+        margin: 8px;
+    }
+}
