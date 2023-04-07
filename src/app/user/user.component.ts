@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.component';
+import { User } from '../models/user.class';
 
 
 @Component({
@@ -10,7 +11,11 @@ import { DialogAddUserComponent } from '../dialog-add-user/dialog-add-user.compo
 })
 export class UserComponent {
 
-  constructor(public dialog: MatDialog) {}
+  user = new User();
+
+  constructor(public dialog: MatDialog) {
+    
+  }
 
   openDialog() {
     this.dialog.open(DialogAddUserComponent);
