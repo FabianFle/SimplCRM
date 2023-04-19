@@ -1,6 +1,29 @@
-<p>user works!</p>
-
-
-<button (click)="openDialog()" class="add-User-Btn" mat-fab color="primary" matTooltip="Add user">
-    <mat-icon>add</mat-icon>
+<button
+  (click)="openDialog()"
+  [matTooltipPosition]="'above'"
+  matTooltip="Add User"
+  class="add-user-btn"
+  mat-fab
+  color="primary"
+>
+  <mat-icon>add</mat-icon>
 </button>
+
+<mat-card>
+  <mat-card-content>
+    <table class="full-width user-table">
+      <tr>
+        <th>Name</th>
+        <th>E-Mail</th>
+        <th>Street</th>
+        <th>City</th>
+      </tr>
+      <tr *ngFor="let user of allUsers" [routerLink]="['/user/' + user.customIdName]">
+        <td>{{ user.firstName }} {{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.street }}</td>
+        <td>{{ user.zipCode }} {{ user.city }}</td>
+      </tr>
+    </table>
+  </mat-card-content>
+</mat-card>

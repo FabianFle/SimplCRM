@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "SimpleCRM": {
+    "simple-crm": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -30,7 +30,7 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -66,10 +66,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "SimpleCRM:build:production"
+              "browserTarget": "simple-crm:build:production"
             },
             "development": {
-              "browserTarget": "SimpleCRM:build:development"
+              "browserTarget": "simple-crm:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -77,7 +77,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "SimpleCRM:build"
+            "browserTarget": "simple-crm:build"
           }
         },
         "test": {
@@ -94,26 +94,16 @@
               "src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/pink-bluegrey.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
             "scripts": []
-          }
-        },
-        "deploy": {
-          "builder": "@angular/fire:deploy",
-          "options": {
-            "prerender": false,
-            "ssr": false,
-            "browserTarget": "SimpleCRM:build:production",
-            "firebaseProject": "simpelcrm",
-            "firebaseHostingSite": "simpelcrm"
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": "796089d4-51ca-4607-a86d-9f941c0d239f"
+    "analytics": "90ca876a-3487-404c-92d3-47ca9e0ec6ff"
   }
 }

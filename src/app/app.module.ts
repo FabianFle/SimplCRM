@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { MatInputModule } from '@angular/material/input';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,13 +13,24 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DialogAddUserComponent } from './dialog-add-user/dialog-add-user.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { FormsModule } from '@angular/forms';
-import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
-import { provideFirestore, getFirestore } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatCardModule } from '@angular/material/card';
+import { UserDetailComponent } from './user-detail/user-detail.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { DialogEditAdressComponent } from './dialog-edit-adress/dialog-edit-adress.component';
+import { DialogEditProfileComponent } from './dialog-edit-profile/dialog-edit-profile.component';
+
+
+
+
 
 
 @NgModule({
@@ -27,27 +38,33 @@ import { environment } from 'src/environments/environment.prod';
     AppComponent,
     DashboardComponent,
     UserComponent,
-    DialogAddUserComponent
+    DialogAddUserComponent,
+    UserDetailComponent,
+    DialogEditAdressComponent,
+    DialogEditProfileComponent
   ],
   imports: [
     BrowserModule,
-    MatNativeDateModule,
-    MatDatepickerModule,
-    MatFormFieldModule,
-    MatTooltipModule,
-    MatInputModule,
     AppRoutingModule,
-    MatButtonModule,
     BrowserAnimationsModule,
-    MatSidenavModule,
-    MatDialogModule,
-    MatIconModule,
     MatToolbarModule,
+    MatMenuModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatButtonModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     FormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-  ],
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    MatProgressBarModule,
+    MatCardModule
 
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
